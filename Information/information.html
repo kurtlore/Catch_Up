@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Catch Up - Information</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="icon" href="https://lh3.googleusercontent.com/fCha5HZZVSC1-Vw0iOL-2CyHWQScCv3mwj2KLOAgEfUc8ZLpL9odHJiPCv5iT-Lc7J2TtF7fdSUB7YJNGbVehrFQwM38XnKy08kZyet-tuX67EYkF0yGa-dajuYzUEhBRx3dc_42EA=s128-p-k" type = "image/x-icon">
+
+        <style>
+            @font-face {
+              font-family: Circular-Bold;
+              src: url(/Fonts/Bold.otf);
+            }
+            
+            @font-face {
+              font-family: Circular-Book;
+              src: url(/Fonts/Book.otf);
+            }
+            
+            @font-face {
+              font-family: Circular-Medium;
+              src: url(/Fonts/Medium.otf);
+            }
+            
+            body{
+                background-color: #191919;
+                letter-spacing: 0.20px; 
+            }
+            
+            .nav-list {
+                padding:0px;
+                list-style-type: none;
+                background-color: #000000;
+                position: fixed;
+                height: 100%;
+                overflow: auto;
+                text-align: center; 
+            }
+
+            .nav-icons {
+                display: block;
+                text-decoration: none;
+            }
+            
+            .nav-logo{
+                width:191px;
+                padding-top:50px;
+            }
+            
+            .nav-pics{
+                width:40px;
+            }
+            
+            .nav-pics-cont{
+                text-align: left;
+                font-family: Circular-Bold; 
+                text-decoration: none;
+                color: #DEDEDE;
+                margin-top:23px; 
+                font-size: 15px;
+                padding-left:14px;
+                padding-right:23px;
+            }
+            
+            .nav-home{
+                margin-top:40px;
+            }
+            
+            a:hover{
+                text-decoration: none;
+                color: #FFFFFF; 
+            }
+            
+            .currently-playing-cont{
+                margin-top:261.5px;
+                padding:0px;
+            }
+            
+            .currently-playing{
+                width:231px; 
+                padding:0px;
+            }
+            
+            header img{
+                width:1209px;
+                margin-left:231px;
+            }
+            
+            .content{
+                margin-left:254px; 
+                margin-right:70px;
+                color:#F9F9F9; 
+                margin-top:41px;
+            }
+            
+            p{
+                margin: 0;
+            }
+            
+            .info-header-text{
+                font-family: Circular-bold;
+                font-size: 25px;
+                margin-bottom: 3%;
+            }
+            
+            .info-header-text:hover{
+                text-decoration: underline;
+                text-decoration-color: #00F362;
+            }
+            
+            .info-cont{
+               display: flex;
+                justify-content: center;
+                flex-wrap: wrap; 
+            }
+            
+            .thisis-img{
+                width:312px;
+            }
+            
+            
+            .thisis-cont{
+                margin-left:4%;
+                margin-bottom:3%;
+            }
+            
+            .content a{
+                display:block;
+            }
+            
+            button{
+                margin:0;
+                padding:0;
+                border:0;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <nav class="nav" id="myNav">
+            <ul class="nav-list">
+                <li><a class="nav-icons" href="../index.html"><img src="https://lh3.googleusercontent.com/M5qDQSTPNv4d5myoUZxSWXmiLIxCNgWf3RWi0Xf_waq2CkOBh_t4S5HVxUj3E7HF2gG7JWFjuwTfqrb3qqNvqckCkVB9IK2dUMjSXDVQST91fPlrHDzi7XZBb2PjRl24mqwdi1KxuA=w2400" alt="logo" class="nav-logo"></a></li>
+                <li><a class="nav-icons nav-pics-cont nav-home" href="../index.html"><img src="https://lh3.googleusercontent.com/SwPVA1XuXz7gs9NYsDH-c__mAUvJGho2S4a16szZU0mm4K_0zo6P5fZFIeB7_e2Q_g0f1TeGJ6-h4b5m7i3JwfN5b7-ZT97hzZtpu7JxNGGJ6o_yp5qoi1Njign5Xa9liVqKosueuw=w2400" alt="home" class="nav-pics">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Home</a></li>
+                <li><a class="nav-icons nav-pics-cont" href="information.html"><img src="https://lh3.googleusercontent.com/3-gbiHs7QD0xVB2pUJ83-hKiLhSFsmieWy1uUvxAJW9WmMVPka8PIcKiGwJ2ZZ9jebkYkbBixf6MVeINZNFHOhZ3HVs_U9sAwht3yJkrMFfHRBQdq7v19ehgA0qkjakHdHSRrw3i4Q=w2400" alt="info" class="nav-pics">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Information</a></li>
+                <li><a class="nav-icons nav-pics-cont" href="../developers/developers-kurt.html"><img src="https://lh3.googleusercontent.com/in4UmqH5IMi5LxKm5Jx5ttrV89o2O4KwrErAizpfIFJx2QPjRLXJsdxEtW8aeydCaASIjepf_qoJ8sTvDaHkdO7TC-eD_H3dNC5Vt5s6itXFS9I3dbNkxF44mMKywekbUckvCfQKKQ=w2400" alt="developers" class="nav-pics">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Developers</a></li>
+                <li><a class="nav-icons nav-pics-cont currently-playing-cont" href="#"><img src="https://lh3.googleusercontent.com/cVm-R98I0Fo1J4NL-9lQxiH7-FN9Bnx8L6bhaelnTPMMIEactQwhKATbIJy-F8aNO5dTVnm_oInTbDXzmAiW596ubB8WOBR7p2DrdI9q6TRjj_ologHG6CEUCfAzpD3j2O2a2mIrtw=w2400" alt="currently-playing" class="nav-pics currently-playing"></a></li>
+            </ul>
+        </nav>
+        
+        <header>
+                <img src="https://lh3.googleusercontent.com/rXEOdrKeW4N1aN-3ncB0yVID3B1IN2kjpy5oznkCKLqeoLMA9YmwALDHd8U8y68mOrGXDLQJiEKc8Rc8g3mIzKonTrnvkfbgVNsY2fmDbKmtbi_2fuRqKZ1H_JCFt72KtWmAx_yDHw=w2400" alt="header">
+            </header>
+        
+         <div class="content">
+             <p class="info-header-text">Genres &#38; Moods</p>
+             
+             <div class="info-cont">
+                <div class="thisis-cont">
+                    <button onclick="changeAboutGame()"><img src="https://lh3.googleusercontent.com/MPzJpGNWnGAFCZWtSF9tAtvk2QUbMF5QNd3gz5MASp2lu8x0ZsKOLEJGS61FTvLenpO810ox-RwW4ysRbUbvtve0EWPifgbiGRZK0FrsChqxESxteimL8DbzU_G45rJW8QYOOQarPQ=w2400" class="thisis-img" alt="the game" id="aboutGame"></button>
+                </div>
+
+                <div class="thisis-cont">
+                    <button onclick="changeAboutInstructions()"><img src="https://lh3.googleusercontent.com/wwQlgFTDZ4iVWmnqKtT0PiOvu-6NIcLvGraafgBy_93ApHwLebX9gfQiWC68MhRNd3kys5TCkwlfbtGH88vrz67AZKiLgucD34ikAFGYzqEg54NGYrio-4ryO3cMd5dyU21luwxK-w=w2400" id="aboutInstructions" class="thisis-img" alt="instructions"></button>
+                </div>
+
+                <div class="thisis-cont">
+                    <button onclick="changeAboutTricks()"><img src="https://lh3.googleusercontent.com/5Ih7zvEVf8cK53DaCYdJtQEcbdbeKyRejBmZOoPMuGb5Eb_5vizHBvVw-Yeld6sgC4XRcqqjKm3yh5pucXKOp6VdpVP0fMqOwC1SUYa4blk-cJra6AEO5zKH5FQuKNSthHJOL0NILA=w2400" class="thisis-img" alt="tips and tricks" id="aboutTricks"></button>
+                </div>
+
+                <div class="thisis-cont">
+                    <a href="../index.html"><img src="https://lh3.googleusercontent.com/ba66XUp20Gbm29mvc-LeGe6ciF3jxaefwELxVU2oa95ucyAWwvvobmnMY4cHJgH7xZ-JcoCG87NzqWE_a_eVFxNTgWSSEUBTxr_lYAYt5JO6O3Z0Ge0KBiq0GcqnVjrALQtSscHqZw=w2400" class="thisis-img" alt="home"></a>
+                </div>
+
+                <div class="thisis-cont">
+                    <a href="../developers/developers-kurt.html"><img src="https://lh3.googleusercontent.com/uiG6pTkDGNx9UFMq44ItQwm_PRG4sdcU1iabqaHeNkeDg8HuK0vPqgIpHvPK6yyVVN1eb1HDFD3fZjf9lSRQqz9AwiapVkdu2cgpSriiSKE-T0ZSeElMGoe3S9cDI9xdYCkxvlG_SA=w2400" class="thisis-img" alt="developers"></a>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            var clickedGame = false, clickedInstructions = false, clickedTips = false; 
+            
+            function changeAboutGame() {
+                if(clickedGame==false){
+                    document.getElementById('aboutGame').src = "https://lh3.googleusercontent.com/bpWM3ZQl2C3yIaJKUMrOeW7H_SFkKb5Hd3tZjMn-QleU2RJl93n8dWbJhvAsGW2KgWVUGIGVYC8vyDmepxPiQ2NIEnwekoQ6heP9GD60Mnm8TrepGIhAMRhteBSzSZi0soaW-KVu3g=w2400";
+                    clickedGame  = true;
+                } else {
+                    document.getElementById('aboutGame').src="https://lh3.googleusercontent.com/MPzJpGNWnGAFCZWtSF9tAtvk2QUbMF5QNd3gz5MASp2lu8x0ZsKOLEJGS61FTvLenpO810ox-RwW4ysRbUbvtve0EWPifgbiGRZK0FrsChqxESxteimL8DbzU_G45rJW8QYOOQarPQ=w2400";
+                    clickedGame = false;
+                }
+            }
+            
+            function changeAboutInstructions() {
+                if(clickedInstructions==false){
+                    document.getElementById('aboutInstructions').src="https://lh3.googleusercontent.com/qodA0FbCjWAVaPQ6sxGx9UM4IhjCY7bK7YwjhjpCMpqwvjwxPkMCbxjzdX9JDOU2tdoG_QHlSTr0UlU7L3rWvremo-0-8-dgJuzX3cVZbQq-be_KPCkrp9F4WkWf_3UUULvDzjnTLg=w2400";
+                    clickedInstructions = true;
+                } else{
+                    document.getElementById('aboutInstructions').src="https://lh3.googleusercontent.com/wwQlgFTDZ4iVWmnqKtT0PiOvu-6NIcLvGraafgBy_93ApHwLebX9gfQiWC68MhRNd3kys5TCkwlfbtGH88vrz67AZKiLgucD34ikAFGYzqEg54NGYrio-4ryO3cMd5dyU21luwxK-w=w2400";
+                    clickedInstructions = false;
+                }
+            }
+            
+            function changeAboutTricks() {
+                if(clickedTips==false){
+                    document.getElementById('aboutTricks').src="https://lh3.googleusercontent.com/zhdu_jzaHzmFVR4TkJ2dn6rxtchpvkcHaVws9XD8rVWFq2I97p22Z-SWas3X1OJv0DC9z6fHPBeXDza_SSX_CIpnHLoDwk91Wblfgsc7PetxuxV20tJKKmNF7mFhRuod2JnYWdIZhw=w2400";
+                    clickedTips = true;
+                } else{
+                    document.getElementById('aboutTricks').src="https://lh3.googleusercontent.com/5Ih7zvEVf8cK53DaCYdJtQEcbdbeKyRejBmZOoPMuGb5Eb_5vizHBvVw-Yeld6sgC4XRcqqjKm3yh5pucXKOp6VdpVP0fMqOwC1SUYa4blk-cJra6AEO5zKH5FQuKNSthHJOL0NILA=w2400";
+                    clickedTips = false;
+                }
+            }
+            
+           
+            
+            
+            
+            
+        </script>
+    </body>
+    
+</html>
+        

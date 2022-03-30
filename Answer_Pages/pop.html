@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Catch Up - Pop</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="icon" href="https://lh3.googleusercontent.com/fCha5HZZVSC1-Vw0iOL-2CyHWQScCv3mwj2KLOAgEfUc8ZLpL9odHJiPCv5iT-Lc7J2TtF7fdSUB7YJNGbVehrFQwM38XnKy08kZyet-tuX67EYkF0yGa-dajuYzUEhBRx3dc_42EA=s128-p-k" type = "image/x-icon">
+        <style>
+            @font-face {
+              font-family: Circular-Bold;
+              src: url(/Fonts/Bold.otf);
+            }
+            
+            @font-face {
+              font-family: Circular-Book;
+              src: url(/Fonts/Book.otf);
+            }
+            
+            @font-face {
+              font-family: Circular-Medium;
+              src: url(/Fonts/Medium.otf);
+            }
+            
+            html{
+                min-height:100%;
+            }
+            
+            body{
+               background-image: linear-gradient(#D13B53, #D32A3D,#EA8D8D);
+                min-height: 100%;
+                background-size: cover;
+                background-repeat: no-repeat;
+                padding-top:4vh;
+                padding-left:62px;
+            }
+            
+            p{
+                margin:0
+            }
+            
+            .logo img{
+                width:72px; 
+            }
+            
+            .logo-img{
+                padding-right:15px;
+            }
+            
+            .playingfrom{
+                color: white;
+                font-family: Circular-book; 
+                letter-spacing: 0.51px;
+                font-size:1rem;
+                opacity: 0.9;
+            }
+            
+            .playlist{
+                color: white;
+                font-family: Circular-bold; 
+                font-size:1.1rem;
+                letter-spacing: 0.20px;
+            }
+            
+            .conti{
+                position: relative;
+                height:80vh;
+            }
+            
+            .big-cont{
+                margin-left: 88px; 
+                margin-right: 151px; 
+                position: absolute;
+                bottom:0; 
+                left: 0;
+                right: 0;
+
+                
+            }
+            
+            .playlist-img{
+                padding-right:45px; 
+            }
+            
+            .playlist-img img{
+                width:328px;
+            }
+        
+            .songtitle{
+                color:#FFFFFF; 
+                font-family: Circular-bold; 
+                letter-spacing: 0.20px;
+                font-size:3rem;
+                border: 0;
+                padding: 0;
+                margin: 0;
+                background: transparent;
+                opacity: 0.9
+                
+            }
+            
+            .songartist{
+                color:#FFFFFF; 
+                font-family: Circular-medium; 
+                letter-spacing: 0.20px;
+                font-size:2rem;
+                opacity: 0.8;
+                line-height: 25px;
+                border: 0;
+                padding: 0;
+                margin: 0;
+                background: transparent;
+            }
+            
+            .songtitle:hover{
+                opacity: 1;
+            }
+            
+            .songartist:hover{
+                opacity: 1;
+            }
+            
+            .answer-cont{
+               vertical-align: bottom;  
+            }
+            
+            .progressbar{
+                height:2%;
+                width:100%; 
+                border-color: #774894; 
+                height: 7px;
+                background-color: #774894;
+                border-radius: 50px;
+                
+            }
+            
+            .progressline {
+                width: 100%;
+                background-color: #FAF9F0;
+                display: inline-block;
+                border-radius: 50px;
+            }
+            
+            .songbar{
+                margin-top:30px;
+            }
+            
+            .controls-cont{
+                margin-top:31px;
+                text-align: center;
+                position: relative;
+            }
+            
+            .play img{
+                width:86px;
+            }
+            
+            .fast-forward img{
+                width:27px;
+            }
+            
+            .fast-backward img{
+                width:27px;
+            }
+            
+            .replay img{
+                width:34px; 
+            }
+            
+            .shuffle img{
+                width:34px; 
+            }
+            
+            .play{
+                margin-left:51px;
+                margin-right:51px;
+            }
+            
+            .fast-forward{
+                margin-right:31px;
+            }
+            
+            .fast-backward{
+                margin-left:31px;
+            }
+            
+            a hover{
+                text-decoration:none;
+            }
+            
+            a p:hover{
+                text-decoration:none;
+                color:white;
+            }
+            
+            button{
+                margin:0;
+                padding:0;
+                border:0;
+                background-color: transparent;
+                background-repeat: no-repeat;
+                cursor: pointer;
+                overflow: hidden;
+                outline: none;
+            }
+            
+            .submit-button{
+                color:#FFFFFF; 
+                font-family: Circular-medium; 
+                letter-spacing: 0.20px;
+                font-size:1.5rem;
+                opacity: 0.8;
+                line-height: 25px;
+                position: absolute;
+                right:0;
+                top:25%;
+            }
+            
+            .submit-button:hover{
+                opacity: 1;
+            }
+            
+            .logo{
+                margin-right:151px;
+            }
+            
+            .logo table{
+                width:100%;
+            }
+            .life-score-cont{
+                padding-left:60%;
+                text-align: right;
+            }
+        
+        </style> 
+    </head>
+    
+    <body>
+        <div class="logo">
+            <a href="../index.html">
+                <table>
+                    <tr>
+                        <td class="logo-img">
+                            <img src="https://lh3.googleusercontent.com/TAIbu6QT5PspD4PkRkfO5ZR42hSyOsUfmOkQq0bbaJrIzt0oWowuoWTBnn3s-n6bDxjPgjv75hzGSeehnklSkn5JXmS-rWC7eMcgqIZ69-6UWZ94KB-pzfMiu0xvUAXzf9HLiykR7g=w2400" alt="spotipoo">   
+                        </td>
+                        <td class="textlogo-cont">
+                            <p class="playingfrom">PLAYING FROM PLAYLIST</p>
+                            <p class="playlist">This is Pop</p>
+                        </td>
+                        <td class="life-score-cont">
+                            <p class="playingfrom">Lives:<span id="lives"></span></p>
+                            <p class="playlist">Score: <span id="score"></span></p>
+                        </td>
+                    </tr>
+                </table> 
+            </a>
+        </div>
+        
+        <div class="conti">
+            <div class="big-cont">
+                <table>
+                    <tr>
+                        <td class="playlist-img">
+                            <img src="https://lh3.googleusercontent.com/aWEPmC3F5omcO1KtgRgsPWHC-aFl6qXAi0x10RhgTiY_8xxPWzEUDClgOL247TrPwKNroombAEyNaIs3TOlvWoeJKmy2cqp5XWQgsbAxZNHLypSqvC_gmco0F7nE7U19o2zL1gWTBw=w2400" alt="spotipoo">   
+                        </td>
+                        <td class="answer-cont">
+                            <input type="text" value="Song Title" class="songtitle" id="songTitle"/>
+                            <input type="text" value="Artist" class="songartist" id="songArtist"/>
+                        </td>
+                    </tr>
+                </table> 
+
+                <div class="songbar">
+                    <div class="progressline">
+                        <div class="progressbar" style="width: 30%; background-color: #6174AD;">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls-cont">
+                     <a class="shuffle"><img src="https://lh3.googleusercontent.com/iq0w8FIKCqieAcEeiR8-LyZptP7CGLeV_x1Yq5HrtUsWNt9A4hNsQAfTGIo2A0fevobyo4qCv1X0g0pwgWGzNzr_Bv4UY5u-4G2BVlUh6vbBGQU2clzVMX0_tnSDS35spPMmc1nDjw=w2400" alt="shuffle"></a>
+                    <a class="fast-backward"><img src="https://lh3.googleusercontent.com/lW_-VSmPvdXp9MmZS_N9GTRg_rJkMdznjXB-2o5rzZavAuPKplLidIHI0mNB8fkUX73mD523yb7D_h5mdxRW5tDNn9wfJBZ41Yr3L9SSOOdddXM7r0aXbDnlynIAUOvzzUr5ao1t1Q=w2400" alt="fast backward"></a>
+                    <button class="play"><img src="https://lh3.googleusercontent.com/qfUrAe1kgaBXK6t5RwUcHPDbQTOGMJo4xzpbkVPx-WhL3evCX3_Plw0WW01mVUhuH7m7GsoB_jMS-l2ryg2zZypUfSjXb4VLMuTe3Z8wWAB4JcxZ2BsJgd0A3KeR-NBpI0crPR-ndA=w2400" alt="play" onclick="playSong()"></button>
+                    <a class="fast-forward"><img src="https://lh3.googleusercontent.com/q5PIdAstP8YJBE2YCCgRNNXPvro_ffoqL65QVGRldX5ybG1yEGPlk7rWpHYfo-2gYvl_gDiNalzGCfMkY2rCUb3LiA8Xk_zr-63-x918sE0-CMjBqK4TSTKk8CZmEoIPShN8oz3OGQ=w2400" alt="fast forward"></a>
+                    <a class="replay"><img src="https://lh3.googleusercontent.com/ido5Y5Et9l-sD9zixUM3fAenCDLgrz1PgwQhVSOVvLZLpOEeEFw0HYFZDwwQt4HhuQtb66-Or1eJU4WA7PrRmIiSEprlakh7a43Yi0mpNyAYdY2gM3u7W-ocLo7UKaFYtrs_hrp-cw=w2400" alt="replay"></a>
+                    <button class="submit-button" onclick="checkAnswer()">Submit</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var num1 = new Audio(), num2 = new Audio(), num3 = new Audio(), num4 = new Audio(), num5 = new Audio();
+            var num6 = new Audio(), num7 = new Audio(), num8 = new Audio(), num9 = new Audio(), num10 = new Audio();
+            var round = 1, lives = 3, score = 0; 
+            var answer = '';
+
+            num1.src = '../Songs/Pop/pop1.mp3'; 
+            num2.src = '../Songs/Pop/pop2.mp3';
+            num3.src = '../Songs/Pop/pop3.mp3';
+            num4.src = '../Songs/Pop/pop4.mp3';
+            num5.src = '../Songs/Pop/pop5.mp3';
+            num6.src = '../Songs/Pop/pop6.mp3';
+            num7.src = '../Songs/Pop/pop7.mp3';
+            num8.src = '../Songs/Pop/pop8.mp3';
+            num9.src = '../Songs/Pop/pop9.mp3';
+            num10.src = '../Songs/Pop/pop10.mp3';
+            
+            document.getElementById("lives").innerHTML = ' ' + lives;
+            document.getElementById("score").innerHTML = ' ' + score;
+            
+            const correctAnswers = ["single ladies beyonce", 
+                                    "umbrella rihanna", 
+                                    "shake it off taylor swift",
+                                    "toxic britney spears",
+                                    "rolling in the deep adele", 
+                                    "firework katy perry",
+                                    "levitating dua lipa",
+                                    "driver's license olivia rodrigo",
+                                    "need to know doja cat",
+                                    "call me maybe carly rae jepsen"
+                                       ]; 
+            
+            function playSong(){
+                if (round==1){
+                    if(lives==3){
+                        num1.play();
+                        num1.playbackRate = 7;
+                    } else if(lives==2){
+                        num1.playbackRate=5;
+                        num1.play(); 
+                    } else if(lives=1){
+                        num1.playbackRate=3;
+                        num1.play(); 
+                        round++;
+                    }
+                } 
+                else if (round==2){
+                    if(lives==3){
+                        num2.play();
+                        num2.playbackRate = 7;
+                    } else if(lives==2){
+                        num2.playbackRate=5;
+                        num2.play(); 
+                    } else if(lives=1){
+                        num2.playbackRate=3;
+                        num2.play(); 
+                    } else{
+                        round++;
+                    }
+                }
+                else if (round==3){
+                    if(lives==3){
+                        num3.play();
+                        num3.playbackRate = 7;
+                    } else if(lives==2){
+                        num3.playbackRate=5;
+                        num3.play(); 
+                    } else if(lives=1){
+                        num3.playbackRate=3;
+                        num3.play(); 
+                    } else{
+                        round++;
+                    }
+                }
+                else if (round==4){
+                    if(lives==3){
+                        num4.play();
+                        num4.playbackRate = 7;
+                    } else if(lives==2){
+                        num4.playbackRate=5;
+                        num4.play(); 
+                    } else if(lives=1){
+                        num4.playbackRate=3;
+                        num4.play(); 
+                    } else{
+                        round++;
+                    }
+                }
+                else if (round==5){
+                    if(lives==3){
+                        num5.play();
+                        num5.playbackRate = 7;
+                    } else if(lives==2){
+                        num5.playbackRate=5;
+                        num5.play(); 
+                    } else if(lives=1){
+                        num5.playbackRate=3;
+                        num5.play(); 
+                    } else{
+                        round++;
+                    }
+                }
+                else if (round==6){
+                    if(lives==3){
+                        num6.play();
+                        num6.playbackRate = 7;
+                    } else if(lives==2){
+                        num6.playbackRate=5;
+                        num6.play(); 
+                    } else if(lives=1){
+                        num6.playbackRate=3;
+                        num6.play(); 
+                    } else{
+                        round++;
+                    }
+                }
+                else if (round==7){
+                    if(lives==3){
+                        num7.play();
+                        num7.playbackRate = 7;
+                    } else if(lives==2){
+                        num7.playbackRate=5;
+                        num7.play(); 
+                    } else if(lives=1){
+                        num7.playbackRate=3;
+                        num7.play(); 
+                    } else{
+                        round++;
+                    }
+                }
+                else if (round==8){
+                    if(lives==3){
+                        num8.play();
+                        num8.playbackRate = 7;
+                    } else if(lives==2){
+                        num8.playbackRate=5;
+                        num8.play(); 
+                    } else if(lives=1){
+                        num8.playbackRate=3;
+                        num8.play(); 
+                    } else{
+                        round++;
+                    }
+                }
+                else if (round==9){
+                    if(lives==3){
+                        num9.play();
+                        num9.playbackRate = 7;
+                    } else if(lives==2){
+                        num9.playbackRate=5;
+                        num9.play(); 
+                    } else if(lives=1){
+                        num9.playbackRate=3;
+                        num9.play(); 
+                    } else{
+                        round++;
+                    }
+                }
+                else {
+                    if(lives==3){
+                        num10.play();
+                        num10.playbackRate = 7;
+                    } else if(lives==2){
+                        num10.playbackRate=5;
+                        num10.play(); 
+                    } else if(lives=1){
+                        num10.playbackRate=3;
+                        num10.play(); 
+                    } else{
+                        round++;
+                    }
+                }
+            }
+            
+            function checkAnswer(){
+                answer = document.getElementById("songTitle").value.toLowerCase() + ' ' + document.getElementById("songArtist").value.toLowerCase();
+                
+                if (round==1){
+                    if(lives > 0){
+                        if (answer == correctAnswers[0]){
+                            score = score + lives; 
+                            document.getElementById("score").innerHTML = ' ' + score;
+                            round++; 
+                            lives = 3; 
+                            document.getElementById("lives").innerHTML = ' ' + lives;
+                            document.getElementById("songTitle").value ="Song Title";
+                            document.getElementById("songArtist").value ="Artist";
+                            window.alert("You are correct! Moving onto round: " + round)
+                            
+                        } else {
+                            lives--;
+                            document.getElementById("lives").innerHTML = ' ' + lives;
+                            window.alert('Wrong!')
+                            document.getElementById("songTitle").value ="Song Title";
+                            document.getElementById("songArtist").value ="Artist";
+                        }
+                    } else {
+                        window.alert('You were too slow for that round! Catch up!')
+                        lives = 3; 
+                        document.getElementById("lives").innerHTML = ' ' + lives;
+                        round++;
+                        document.getElementById("songTitle").value ="Song Title";
+                        document.getElementById("songArtist").value ="Artist";
+                    }
+                } 
+                else if (round==2){
+                    if(lives > 0){
+                        if (answer == correctAnswers[1]){
+                            score = score + lives; 
+                            document.getElementById("score").innerHTML = ' ' + score;
+                            round++; 
+                            lives = 3; 
+                            document.getElementById("lives").innerHTML = ' ' + lives;
+                            document.getElementById("songTitle").value ="Song Title";
+                            document.getElementById("songArtist").value ="Artist";
+                            window.alert("You are correct! Moving onto round: " + round)
+                            
+                        } else {
+                            lives--;
+                            document.getElementById("lives").innerHTML = ' ' + lives;
+                            window.alert('Wrong!')
+                            document.getElementById("songTitle").value ="Song Title";
+                            document.getElementById("songArtist").value ="Artist";
+                        }
+                    } else {
+                        window.alert('You were too slow for that round! Catch up!')
+                        lives = 3; 
+                        document.getElementById("lives").innerHTML = ' ' + lives;
+                        round++;
+                        document.getElementById("songTitle").value ="Song Title";
+                        document.getElementById("songArtist").value ="Artist";
+                    }
+                }
+                else if (round==3){
+                    if(lives > 0){
+                        if (answer == correctAnswers[2]){
+                            score = score + lives; 
+                            document.getElementById("score").innerHTML = ' ' + score;
+                            round++; 
+                            lives = 3; 
+                            document.getElementById("lives").innerHTML = ' ' + lives;
+                            document.getElementById("songTitle").value ="Song Title";
+                            document.getElementById("songArtist").value ="Artist";
+                            window.alert("You are correct! Moving onto round: " + round)
+                            
+                        } else {
+                            lives--;
+                            document.getElementById("lives").innerHTML = ' ' + lives;
+                            window.alert('Wrong!')
+                            document.getElementById("songTitle").value ="Song Title";
+                            document.getElementById("songArtist").value ="Artist";
+                        }
+                    } else {
+                        window.alert('You were too slow for that round! Catch up!')
+                        lives = 3; 
+                        document.getElementById("lives").innerHTML = ' ' + lives;
+                        round++;
+                        document.getElementById("songTitle").value ="Song Title";
+                        document.getElementById("songArtist").value ="Artist";
+                    }
+                }
+                else if (round==4){
+                    if(lives > 0){
+                        if (answer == correctAnswers[3]){
+                            score = score + lives; 
+                            document.getElementById("score").innerHTML = ' ' + score;
+                            round++; 
+                            lives = 3; 
+                            document.getElementById("lives").innerHTML = ' ' + lives;
+                            document.getElementById("songTitle").value ="Song Title";
+                            document.getElementById("songArtist").value ="Artist";
+                            window.alert("You are correct! Moving onto round: " + round)
+                            
+                        } else {
+                            lives--;
+                            document.getElementById("lives").innerHTML = ' ' + lives;
+                            window.alert('Wrong!')
+                            document.getElementById("songTitle").value ="Song Title";
+                            document.getElementById("songArtist").value ="Artist";
+                        }
+                    } else {
+                        window.alert('You were too slow for that round! Catch up!')
+                        lives = 3; 
+                        document.getElementById("lives").innerHTML = ' ' + lives;
+                        round++;
+                        document.getElementById("songTitle").value ="Song Title";
+                        document.getElementById("songArtist").value ="Artist";
+                    }
+                }
+                else if (round==5){
+                    if(lives > 0){
+                        if (answer == correctAnswers[4]){
+                            score = score + lives; 
+                            document.getElementById("score").innerHTML = ' ' + score;
+                            round++; 
+                            lives = 3; 
+                            document.getElementById("lives").innerHTML = ' ' + lives;
+                            document.getElementById("songTitle").value ="Song Title";
+                            document.getElementById("songArtist").value ="Artist";
+                            window.alert("You are correct! Moving onto round: " + round)
+                            
+                        } else {
+                            lives--;
+                            document.getElementById("lives").innerHTML = ' ' + lives;
+                            window.alert('Wrong!')
+                            document.getElementById("songTitle").value ="Song Title";
+                            document.getElementById("songArtist").value ="Artist";
+                        }
+                    } else {
+                        window.alert('You were too slow for that round! Catch up!')
+                        lives = 3; 
+                        document.getElementById("lives").innerHTML = ' ' + lives;
+                        round++;
+                        document.getElementById("songTitle").value ="Song Title";
+                        document.getElementById("songArtist").value ="Artist";
+                    }
+                }
+                else if (round==6){
+                    if(lives > 0){
+                        if (answer == correctAnswers[5]){
+                            score = score + lives; 
+                            document.getElementById("score").innerHTML = ' ' + score;
+                            round++; 
+                            lives = 3; 
+                            document.getElementById("lives").innerHTML = ' ' + lives;
+                            document.getElementById("songTitle").value ="Song Title";
+                            document.getElementById("songArtist").value ="Artist";
+                            window.alert("You are correct! Moving onto round: " + round)
+                            
+                        } else {
+                            lives--;
+                            document.getElementById("lives").innerHTML = ' ' + lives;
+                            window.alert('Wrong!')
+                            document.getElementById("songTitle").value ="Song Title";
+                            document.getElementById("songArtist").value ="Artist";
+                        }
+                    } else {
+                        window.alert('You were too slow for that round! Catch up!')
+                        lives = 3; 
+                        document.getElementById("lives").innerHTML = ' ' + lives;
+                        round++;
+                        document.getElementById("songTitle").value ="Song Title";
+                        document.getElementById("songArtist").value ="Artist";
+                    }
+                }
+                else if (round==7){
+                    if(lives > 0){
+                        if (answer == correctAnswers[6]){
+                            score = score + lives; 
+                            document.getElementById("score").innerHTML = ' ' + score;
+                            round++; 
+                            lives = 3; 
+                            document.getElementById("lives").innerHTML = ' ' + lives;
+                            document.getElementById("songTitle").value ="Song Title";
+                            document.getElementById("songArtist").value ="Artist";
+                            window.alert("You are correct! Moving onto round: " + round)
+                            
+                        } else {
+                            lives--;
+                            document.getElementById("lives").innerHTML = ' ' + lives;
+                            window.alert('Wrong!')
+                            document.getElementById("songTitle").value ="Song Title";
+                            document.getElementById("songArtist").value ="Artist";
+                        }
+                    } else {
+                        window.alert('You were too slow for that round! Catch up!')
+                        lives = 3; 
+                        document.getElementById("lives").innerHTML = ' ' + lives;
+                        round++;
+                        document.getElementById("songTitle").value ="Song Title";
+                        document.getElementById("songArtist").value ="Artist";
+                    }
+                }
+                else if (round==8){
+                    if(lives > 0){
+                        if (answer == correctAnswers[7]){
+                            score = score + lives; 
+                            document.getElementById("score").innerHTML = ' ' + score;
+                            round++; 
+                            lives = 3; 
+                            document.getElementById("lives").innerHTML = ' ' + lives;
+                            document.getElementById("songTitle").value ="Song Title";
+                            document.getElementById("songArtist").value ="Artist";
+                            window.alert("You are correct! Moving onto round: " + round)
+                            
+                        } else {
+                            lives--;
+                            document.getElementById("lives").innerHTML = ' ' + lives;
+                            window.alert('Wrong!')
+                            document.getElementById("songTitle").value ="Song Title";
+                            document.getElementById("songArtist").value ="Artist";
+                        }
+                    } else {
+                        window.alert('You were too slow for that round! Catch up!')
+                        lives = 3; 
+                        document.getElementById("lives").innerHTML = ' ' + lives;
+                        round++;
+                        document.getElementById("songTitle").value ="Song Title";
+                        document.getElementById("songArtist").value ="Artist";
+                    }
+                }
+                else if (round==9){
+                    if(lives > 0){
+                        if (answer == correctAnswers[8]){
+                            score = score + lives; 
+                            document.getElementById("score").innerHTML = ' ' + score;
+                            round++; 
+                            lives = 3; 
+                            document.getElementById("lives").innerHTML = ' ' + lives;
+                            document.getElementById("songTitle").value ="Song Title";
+                            document.getElementById("songArtist").value ="Artist";
+                            window.alert("You are correct! Moving onto round: " + round)
+                            
+                        } else {
+                            lives--;
+                            document.getElementById("lives").innerHTML = ' ' + lives;
+                            window.alert('Wrong!')
+                            document.getElementById("songTitle").value ="Song Title";
+                            document.getElementById("songArtist").value ="Artist";
+                        }
+                    } else {
+                        window.alert('You were too slow for that round! Catch up!')
+                        lives = 3; 
+                        document.getElementById("lives").innerHTML = ' ' + lives;
+                        round++;
+                        document.getElementById("songTitle").value ="Song Title";
+                        document.getElementById("songArtist").value ="Artist";
+                    }
+                }
+                else {
+                    if(lives > 0){
+                        if (answer == correctAnswers[9]){
+                            score = score + lives; 
+                            document.getElementById("score").innerHTML = ' ' + score;
+                            round++; 
+                            lives = 3; 
+                            document.getElementById("lives").innerHTML = ' ' + lives;
+                            document.getElementById("songTitle").value ="Song Title";
+                            document.getElementById("songArtist").value ="Artist";
+                            window.alert("You are correct! You have finished this game with a score of " + score)
+                            
+                        } else {
+                            lives--;
+                            document.getElementById("lives").innerHTML = ' ' + lives;
+                            window.alert('Wrong!')
+                            document.getElementById("songTitle").value ="Song Title";
+                            document.getElementById("songArtist").value ="Artist";
+                        }
+                    } else {
+                        window.alert('You were too slow for that round! Catch up!')
+                        lives = 3; 
+                        document.getElementById("lives").innerHTML = ' ' + lives;
+                        round++;
+                        document.getElementById("songTitle").value ="Song Title";
+                        document.getElementById("songArtist").value ="Artist";
+                    }
+                }
+            }
+        </script>
+
+    </body>
+</html>

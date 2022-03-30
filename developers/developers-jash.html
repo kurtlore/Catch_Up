@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Catch Up - Developer Jash</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="icon" href="https://lh3.googleusercontent.com/fCha5HZZVSC1-Vw0iOL-2CyHWQScCv3mwj2KLOAgEfUc8ZLpL9odHJiPCv5iT-Lc7J2TtF7fdSUB7YJNGbVehrFQwM38XnKy08kZyet-tuX67EYkF0yGa-dajuYzUEhBRx3dc_42EA=s128-p-k" type = "image/x-icon">
+        <style>
+            @font-face {
+              font-family: Circular-Bold;
+              src: url(/Fonts/Bold.otf);
+            }
+            
+            @font-face {
+              font-family: Circular-Book;
+              src: url(/Fonts/Book.otf);
+            }
+            
+            @font-face {
+              font-family: Circular-Medium;
+              src: url(/Fonts/Medium.otf);
+            }
+            
+            body{
+                background-color: #191919;
+                letter-spacing: 0.20px;
+            }
+            
+            .nav-list {
+                padding:0px;
+                list-style-type: none;
+                background-color: #000000;
+                position: fixed;
+                height: 100%;
+                overflow: auto;
+                text-align: center; 
+            }
+
+            .nav-icons {
+                display: block;
+                text-decoration: none;
+            }
+            
+            .nav-logo{
+                width:191px;
+                padding-top:50px;
+            }
+            
+            .nav-pics{
+                width:40px;
+            }
+            
+            .nav-pics-cont{
+                text-align: left;
+                font-family: Circular-Bold; 
+                text-decoration: none;
+                color: #DEDEDE;
+                margin-top:23px; 
+                font-size: 15px;
+                padding-left:14px;
+                padding-right:23px;
+            }
+            
+            .nav-home{
+                margin-top:40px;
+            }
+            
+            a:hover{
+                text-decoration: none;
+                color: #FFFFFF; 
+            }
+            
+            .currently-playing-cont{
+                margin-top:261.5px;
+                padding:0px;
+            }
+            
+            .currently-playing{
+                width:231px; 
+                padding:0px;
+            }
+
+            .content{
+                margin-left:298px;
+                margin-top:80px;
+                color:#F9F9F9; 
+                position: relative;
+            }
+            
+            .developer-header-text{
+                font-family: Circular-Bold; 
+                font-size: 25px; 
+                margin-bottom: 9px;
+            }
+            
+            .image-gallery-pic{
+                width:637px;
+            }
+            
+            .bio-header-text{
+                margin-top: 46px;
+            }
+            
+            .bio-text{
+                font-family: Circular-book;
+                opacity: 0.7;
+                font-size: 20px;
+                line-height: 1.6; 
+            }
+            
+            .image-cont{
+                width:60%;
+            }
+            
+            .social-media-cont{
+                vertical-align: top;
+                width:40%;
+            }
+            
+            .info-header-text{
+                margin-bottom:45px; 
+            }
+            
+            .social-media-cont img{
+                width:41px;
+            }
+            
+            .social-media-cont a{
+                color: #DEDEDE;
+                font-family: Circular-Bold; 
+                display:block;
+            }
+            
+            a:hover{
+                color:white;
+            }
+            
+            .socmed-margin{
+                margin-top:17px;
+            }
+            
+            .activity-cont{
+                vertical-align: top;
+            }
+            
+            .activity-cont img{
+                width:92px;
+            }
+            
+            .songtitle{
+                font-family: Circular-Bold;
+                font-size:17px;
+                margin-bottom:0; 
+            }
+            
+            .songartist{
+                font-family: Circular-Book;
+                font-size:17px;
+                opacity: 0.7;
+                margin-bottom:0; 
+            }
+            
+            .songalbum{
+                font-family: Circular-Book;
+                font-size:17px;
+                opacity: 0.7;
+                margin-top: 25px;
+                
+            }
+            
+            .songinfo-cont{
+                vertical-align: top;
+            }
+            
+            .activity-img{
+                padding-right:5%;
+                padding-top:0;
+                padding-bottom: 0;
+                margin:0; 
+            }
+            
+            p{
+                margin:0;
+            }
+            
+            .activity-cont td{
+                padding-bottom: 12px;
+            }
+            
+            .image-bio-cont{
+                width:55%;
+                display:inline-block;
+                vertical-align: top;
+                margin-right:5%;
+                
+            }
+            
+            .socmed-activity-cont{
+                width:30%;
+                display:inline-block;
+            }
+            
+            .developer-nav{
+                font-family:circular-medium; 
+                color:#F9F9F9;
+                margin-right: 20px;
+                opacity: 0.6;
+                
+            }
+            
+            a.developer-nav:hover{
+                color:white;
+                opacity: 0.9;
+                 
+            }
+            
+            a.active{
+                text-decoration: underline;
+                text-decoration-color: #00F362;
+                opacity: 1;
+                color:white;
+                
+            }
+            
+            @media(max-width:1363px){
+                .content{
+                    margin-right: 80px;
+                }
+                
+                .image-bio-cont{
+                width:100%;
+                vertical-align: center;
+                margin-right:10%;
+                }
+            
+            .socmed-activity-cont{
+                width:100%;
+                vertical-align: center;
+                }
+                
+                .bio-text{
+                    margin-bottom:5%;
+                }
+            }
+            
+            .content-cont{
+                position: absolute;
+                top:10%;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <nav class="nav" id="myNav">
+            <ul class="nav-list">
+                <li><a class="nav-icons" href="../index.html"><img src="https://lh3.googleusercontent.com/M5qDQSTPNv4d5myoUZxSWXmiLIxCNgWf3RWi0Xf_waq2CkOBh_t4S5HVxUj3E7HF2gG7JWFjuwTfqrb3qqNvqckCkVB9IK2dUMjSXDVQST91fPlrHDzi7XZBb2PjRl24mqwdi1KxuA=w2400" alt="logo" class="nav-logo"></a></li>
+                <li><a class="nav-icons nav-pics-cont nav-home" href="../index.html"><img src="https://lh3.googleusercontent.com/SwPVA1XuXz7gs9NYsDH-c__mAUvJGho2S4a16szZU0mm4K_0zo6P5fZFIeB7_e2Q_g0f1TeGJ6-h4b5m7i3JwfN5b7-ZT97hzZtpu7JxNGGJ6o_yp5qoi1Njign5Xa9liVqKosueuw=w2400" alt="home" class="nav-pics">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Home</a></li>
+                <li><a class="nav-icons nav-pics-cont" href="../Information/information.html"><img src="https://lh3.googleusercontent.com/3-gbiHs7QD0xVB2pUJ83-hKiLhSFsmieWy1uUvxAJW9WmMVPka8PIcKiGwJ2ZZ9jebkYkbBixf6MVeINZNFHOhZ3HVs_U9sAwht3yJkrMFfHRBQdq7v19ehgA0qkjakHdHSRrw3i4Q=w2400" alt="info" class="nav-pics">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Information</a></li>
+                <li><a class="nav-icons nav-pics-cont" href="developers-kurt.html"><img src="https://lh3.googleusercontent.com/in4UmqH5IMi5LxKm5Jx5ttrV89o2O4KwrErAizpfIFJx2QPjRLXJsdxEtW8aeydCaASIjepf_qoJ8sTvDaHkdO7TC-eD_H3dNC5Vt5s6itXFS9I3dbNkxF44mMKywekbUckvCfQKKQ=w2400" alt="developers" class="nav-pics">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Developers</a></li>
+                <li><a class="nav-icons nav-pics-cont currently-playing-cont" href="#"><img src="https://lh3.googleusercontent.com/cVm-R98I0Fo1J4NL-9lQxiH7-FN9Bnx8L6bhaelnTPMMIEactQwhKATbIJy-F8aNO5dTVnm_oInTbDXzmAiW596ubB8WOBR7p2DrdI9q6TRjj_ologHG6CEUCfAzpD3j2O2a2mIrtw=w2400" alt="currently-playing" class="nav-pics currently-playing"></a></li>
+            </ul>
+        </nav>
+        
+        <div class="content">
+            <div class="content-cont">
+            <div class="developer-nav-cont">
+                <a href="developers-kurt.html" class="developer-nav">KURT</a>
+                <a href="developers-bea.html" class="developer-nav">BEA</a>
+                <a href="developers-jash.html" class="developer-nav active">JASH</a>
+            </div>
+            <div>
+                <table class="image-bio-cont">
+                    <tr>
+                        <td  class="image-cont">
+                            <p class="developer-header-text">Image Gallery</p>
+                            <img src="https://lh3.googleusercontent.com/DzdtTyLIZPE127rVYf0b-DZgIS5lthLfmVHYjRXkbVbqvaWNvZ2j6u_s4qXwxz54rY4nvpugbV6wyICKIbdOOHiUSSThXNUhkHgtxvEf2vhTuahAtRk4LvkJSHPlS-Y-pdM98HmLGQ=w2400" alt="jash" class="image-gallery-pic">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td  class="bio-cont">
+                            <p class="developer-header-text bio-header-text">Bio</p>
+                            <p class="bio-text">I am Jashleen Kate Medina, often called Kate or Jash, but not Leen. I have two nicknames, pili na lang kayo doon, just not Leen. I am a 15-year-old, standing at 5’11… Minus 1 feet. Pero don’t be fooled by my height, I may look like a 10-year-old kid who is a big fan of My Little Pony and Barbie, but I can rap Nicki Minaj’s verse in “Monster” and “Bang bang” as well as every line in “Guns n’ Ships” (beat that mwahaha).</p>
+                        </td>
+                    </tr>
+                </table>
+                
+                <table class="socmed-activity-cont">
+                    <tr>
+                         <td  class="social-media-cont">
+                            <p class="developer-header-text info-header-text">More Info</p>
+                            <a href="#"><img src="https://lh3.googleusercontent.com/fmQfgkSrG8w2c9xWfoU_6XKrr_QRCpFLV15PITgXwopK3wMJxpZ29EtHjVY4dGSQveFYndMIA1PfUTrO3eRred6UOPO722LB_k9MGyetxieQDlGtW0kAt84n1agn84wORLloNDDubg=w2400" alt="instagrams">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Instagram</a>
+                            <a href="#" class="socmed-margin"><img src="https://lh3.googleusercontent.com/qNGPre3HPmjRgi64dpij7AHavweiM_uDnR1W8pIaRvUbfja79vr_wJNyPcW8zxc21biLrCIexvcHDDzKAfxwGL_WxeFNM_YQ15lK3xte9_s9C13MhNV_Bmfgq8T7kQBNW-gYV8Wb-g=w2400" alt="faceybooks">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Facebook</a>
+                            <a href="#" class="socmed-margin"><img src="https://lh3.googleusercontent.com/0AJXnI4n-QvFeW9IIz7oWsTU07TZniw7YSPEpGwrXHpYkF04WGiKcUgIFqMOf8zkD71jbrh7pURmDzrA78LT6Zx19cAKIiY5AdZCwc_lnJTa1iBGvF7bx1wtThOGcMX49xRq9LH_-A=w2400" alt="twitters">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Twitter</a>
+                            <a href="#" class="socmed-margin"><img src="https://lh3.googleusercontent.com/hXqEZlKxszbKShxNLBycDa6YDRbOV7Zt4yebfeQR5hBoLGmL6SNMZaUuJPxp9G4jfRhO0DIo0tfYvw4IVPo1ZMCHJQs6ITfcpWhGvfPRovCu2lLNKTBJT-1g_-5xgovgT-fDhz2huQ=w2400" alt="khub....">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; K-Hub</a>
+                            
+                            <p class="developer-header-text bio-header-text">Activity</p>
+                            <table class=activity-cont>
+                                <tr>
+                                    <td class="activity-img">
+                                        <img src="https://i.pinimg.com/originals/25/12/28/2512289ea977440827a012d64ebda89e.jpg" alt="spotipoo">   
+                                    </td>
+                                    <td class="songinfo-cont">
+                                        <p class="songtitle">Demons</p>
+                                        <p class="songartist">Imagine Dragons</p>
+                                        <p class="songalbum">Night Visions<p>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="activity-img ">
+                                        <img src="https://preview.redd.it/1s8jqogcoll71.jpg?auto=webp&s=d8a53cd209345ee99ededb06a3a4fa515f567813" alt="spotipoo">   
+                                    </td>
+                                    <td class="songinfo-cont">
+                                        <p class="songtitle">Come Hang Out</p>
+                                        <p class="songartist">AJR</p>
+                                        <p class="songalbum">The Click<p>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td class="activity-img">
+                                        <img src="https://m.media-amazon.com/images/I/81Nga9IJojL._SL1425_.jpg" alt="spotipoo">   
+                                    </td>
+                                    <td class="songinfo-cont">
+                                        <p class="songtitle">Give Me Love</p>
+                                        <p class="songartist">Ed Sheeran</p>
+                                        <p class="songalbum">+<p>
+                                    </td>
+                                </tr>
+                            </table> 
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            </div>
+        </div>
+    </body>
+</html>

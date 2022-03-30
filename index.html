@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Catch Up</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="icon" href="https://lh3.googleusercontent.com/fCha5HZZVSC1-Vw0iOL-2CyHWQScCv3mwj2KLOAgEfUc8ZLpL9odHJiPCv5iT-Lc7J2TtF7fdSUB7YJNGbVehrFQwM38XnKy08kZyet-tuX67EYkF0yGa-dajuYzUEhBRx3dc_42EA=s128-p-k" type = "image/x-icon">
+        <style>
+            @font-face {
+              font-family: Circular-Bold;
+              src: url(../Fonts/Bold.otf);
+            }
+            
+            @font-face {
+              font-family: Circular-Book;
+              src: url(../Fonts/Book.otf);
+            }
+            
+            @font-face {
+              font-family: Circular-Medium;
+              src: url(../Fonts/Medium.otf);
+            }
+            
+            body{
+                background-color: #191919;
+                letter-spacing: 0.20px;
+            }
+            
+            .nav-list {
+                padding:0px;
+                list-style-type: none;
+                background-color: #000000;
+                position: fixed;
+                height: 100%;
+                overflow: auto;
+                text-align: center; 
+            }
+
+            .nav-icons {
+                display: block;
+                text-decoration: none;
+            }
+            
+            .nav-logo{
+                width:191px;
+                padding-top:50px;
+            }
+            
+            .nav-pics{
+                width:40px;
+            }
+            
+            .nav-pics-cont{
+                text-align: left;
+                font-family: Circular-Bold; 
+                text-decoration: none;
+                color: #DEDEDE;
+                margin-top:23px; 
+                font-size: 15px;
+                padding-left:14px;
+                padding-right:23px;
+            }
+            
+            .nav-home{
+                margin-top:40px;
+            }
+            
+            a:hover{
+                text-decoration: none;
+                color: #FFFFFF; 
+            }
+            
+            .currently-playing-cont{
+                margin-top:261.5px;
+                padding:0px;
+            }
+            
+            .currently-playing{
+                width:231px; 
+                padding:0px;
+            }
+
+            .content{
+                margin-left:254px;
+                margin-top:80px;
+                margin-right:70px;
+                color:#F9F9F9; 
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .thisis-img{
+                width:312px;
+            }
+            
+            p{
+                margin:0px;
+            }
+            
+            .title{
+                margin-top:15px;
+                font-family: Circular-Bold;
+                font-size: 1.2rem;
+                letter-spacing: 0.30px;
+                color: #DEDEDE;
+            }
+            
+            .artist{
+                margin-top:1px;
+                font-family: Circular-Bold;
+                font-size: 0.9rem;
+                letter-spacing: 0.40px;
+                opacity: 0.7;
+                color: #DEDEDE;
+            }
+            
+            .thisis-cont{
+                margin-left:4%;
+                margin-bottom:3%;
+            }
+            
+            .content a{
+                display:block;
+            }
+            
+
+        </style>
+    </head>
+    
+    <body>
+        <nav class="nav" id="myNav">
+            <ul class="nav-list">
+                <li><a class="nav-icons" href="index.html"><img src="https://lh3.googleusercontent.com/M5qDQSTPNv4d5myoUZxSWXmiLIxCNgWf3RWi0Xf_waq2CkOBh_t4S5HVxUj3E7HF2gG7JWFjuwTfqrb3qqNvqckCkVB9IK2dUMjSXDVQST91fPlrHDzi7XZBb2PjRl24mqwdi1KxuA=w2400" alt="logo" class="nav-logo"></a></li>
+                <li><a class="nav-icons nav-pics-cont nav-home" href="index.html"><img src="https://lh3.googleusercontent.com/SwPVA1XuXz7gs9NYsDH-c__mAUvJGho2S4a16szZU0mm4K_0zo6P5fZFIeB7_e2Q_g0f1TeGJ6-h4b5m7i3JwfN5b7-ZT97hzZtpu7JxNGGJ6o_yp5qoi1Njign5Xa9liVqKosueuw=w2400" alt="home" class="nav-pics">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Home</a></li>
+                <li><a class="nav-icons nav-pics-cont" href="Information/information.html"><img src="https://lh3.googleusercontent.com/3-gbiHs7QD0xVB2pUJ83-hKiLhSFsmieWy1uUvxAJW9WmMVPka8PIcKiGwJ2ZZ9jebkYkbBixf6MVeINZNFHOhZ3HVs_U9sAwht3yJkrMFfHRBQdq7v19ehgA0qkjakHdHSRrw3i4Q=w2400" alt="info" class="nav-pics">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Information</a></li>
+                <li><a class="nav-icons nav-pics-cont" href="/developers/developers-kurt.html"><img src="https://lh3.googleusercontent.com/in4UmqH5IMi5LxKm5Jx5ttrV89o2O4KwrErAizpfIFJx2QPjRLXJsdxEtW8aeydCaASIjepf_qoJ8sTvDaHkdO7TC-eD_H3dNC5Vt5s6itXFS9I3dbNkxF44mMKywekbUckvCfQKKQ=w2400" alt="developers" class="nav-pics">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Developers</a></li>
+                <li><a class="nav-icons nav-pics-cont currently-playing-cont" href="#"><img src="https://lh3.googleusercontent.com/cVm-R98I0Fo1J4NL-9lQxiH7-FN9Bnx8L6bhaelnTPMMIEactQwhKATbIJy-F8aNO5dTVnm_oInTbDXzmAiW596ubB8WOBR7p2DrdI9q6TRjj_ologHG6CEUCfAzpD3j2O2a2mIrtw=w2400" alt="currently-playing" class="nav-pics currently-playing"></a></li>
+            </ul>
+        </nav>
+        
+        <div class="content">
+            <div class="thisis-cont">
+                <a href="Answer_Pages/kpop.html"><img src="https://lh3.googleusercontent.com/MpL_7vgT2bD7yGKJi20PM73CG8u-J0-WXWdvz2Dgrtpcc0wrwhnt3GWVBLRa8UOgJUTeytpO4ALYWN3cbOXaR0irKWr1nEkfq-n0u2Dq8_Tmtpu19aqIvvDmfa-V157yh0quN7sNiQ=w2400" class="thisis-img" alt="this is kpop"></a>
+                <a class="title" href="Answer_Pages/kpop.html">This is K-Pop</a>
+                <a class="artist" href="Answer_Pages/kpop.html">Made for you</a>
+            </div>
+            
+            <div class="thisis-cont">
+                <a href="Answer_Pages/pop.html"><img src="https://lh3.googleusercontent.com/jJEPjy01eLBwR6GZEAdoAjzV5GInqisl2bDSCLPQFJeouAVGA-y3arkcfTOeQjs2PRe2ZbTe2jW0UOCqkiIJTlyauuBvOzURkecyZ0zkFrltQlQ7_-7-Bc4od2Wiftvoun-JsUE7Ow=w2400" class="thisis-img" alt="this is pop"></a>
+                <a class="title" href="Answer_Pages/pop.html">This is Pop</a>
+                <a class="artist" href="Answer_Pages/pop.html">Made for you</a>
+            </div>
+            
+            <div class="thisis-cont">
+                <a href="Answer_Pages/rock.html"><img src="https://lh3.googleusercontent.com/jIfekXc6osjYA9M2GrKktvkCnG1yUJUrUbPW5k6U3p9lPkEcDlakvRBa_tz4g_IYoyzNfmAd1G6coStvIexKJXMbzMU_uUmVoieuJqAfqqx6u50jRYEpR7aygWsu77IWGQ_lQrGmfA=w2400" class="thisis-img" alt="this is rock"></a>
+                <a class="title" href="Answer_Pages/rock.html">This is Rock</a>
+                <a class="artist" href="Answer_Pages/rock.html">Made for you</a>
+            </div>
+            
+            <div class="thisis-cont">
+                <a href="Answer_Pages/90s.html"><img src="https://lh3.googleusercontent.com/0MGvg7V7xyz25qpNs9OtAa0X-bYxZlbw3FeMhyNtzOIZF2rLX7ePo6hS9IJxXNUy1HyjJ-CYDRfrDCV3ahk4aUNfMzbXiUy6jdCOfPaOsf4PK63SmAa5j1aR64TQj8NYf8tV7729Mg=w2400" class="thisis-img" alt="this is 90's"></a>
+                <a class="title" href="Answer_Pages/90s.html">This is 90's</a>
+                <a class="artist" href="Answer_Pages/90s.html">Made for you</a>
+            </div>
+            
+            <div class="thisis-cont">
+                <a href="Answer_Pages/OPM.html"><img src="https://lh3.googleusercontent.com/cH2tgijR_r8vOblaxbGyWR8qTZ82gywcz1b8apkWs0F9pYO_7Gl_5QIplbwPQTDV01ASUMmnQ9y_D3jgmos_IURxv9_DG-dwqavgiNqHy4G0j2b5dRO71MNqYLgkTBwOaNyPf2oV7A=w2400" class="thisis-img" alt="this is opm"></a>
+                <a class="title" href="Answer_Pages/OPM.html">This is OPM</a>
+                <a class="artist" href="Answer_Pages/OPM.html">Made for you</a>
+            </div>
+        </div>
+    </body>
+</html>
